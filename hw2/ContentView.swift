@@ -1,9 +1,3 @@
-//
-//  ContentView.swift
-//  SimpleBunny
-//
-//  Created by You on 2025/9/19.
-//
 
 import SwiftUI
 
@@ -39,7 +33,7 @@ struct ContentView: View {
     }
 }
 
-// MARK: - Bunny built from circles, lines and rectangles only
+// 主要
 struct BunnyLineArt: View {
     var body: some View {
         GeometryReader { g in
@@ -49,7 +43,7 @@ struct BunnyLineArt: View {
             let line = max(2, S * 0.028)
             let stroke = StrokeStyle(lineWidth: line, lineCap: .round, lineJoin: .round)
 
-            // Color palette
+            // 顏色
             let bodyFill = Color(.sRGB, red: 0.93, green: 0.93, blue: 0.95, opacity: 1.0)
             let bellyFill = Color(.sRGB, red: 0.97, green: 0.97, blue: 0.99, opacity: 1.0)
             let innerEarFill = Color(.sRGB, red: 1.0, green: 0.78, blue: 0.84, opacity: 1.0)
@@ -67,7 +61,7 @@ struct BunnyLineArt: View {
                 }
                 .stroke(groundStroke, style: stroke)
 
-                // 手：加長、角度更水平、位置外移一點（仍在身體底下）
+                // 手
                 RoundedRectangle(cornerRadius: S * 0.2)
                     .fill(bodyFill)
                     .frame(width: W * 0.34, height: H * 0.10)
@@ -94,7 +88,7 @@ struct BunnyLineArt: View {
                             .position(x: W * 0.70, y: H * 0.60)
                     )
 
-                // 身體（大圓） fill + outline
+                // 身體（大圓）
                 Circle()
                     .fill(bodyFill)
                     .frame(width: W * 0.56, height: W * 0.56)
@@ -106,7 +100,7 @@ struct BunnyLineArt: View {
                             .position(x: W * 0.50, y: H * 0.62)
                     )
 
-                // 臉（中圓） fill + outline
+                // 臉（中圓）
                 Circle()
                     .fill(bodyFill)
                     .frame(width: W * 0.46, height: W * 0.46)
@@ -118,7 +112,7 @@ struct BunnyLineArt: View {
                             .position(x: W * 0.50, y: H * 0.36)
                     )
 
-                // 左耳（長圓） fill + outline
+                // 左耳（長圓）
                 RoundedRectangle(cornerRadius: S * 0.20, style: .continuous)
                     .fill(bodyFill)
                     .frame(width: W * 0.18, height: H * 0.46)
@@ -146,7 +140,7 @@ struct BunnyLineArt: View {
                             .position(x: W * 0.34, y: H * 0.12)
                     )
 
-                // 右耳（長圓） fill + outline
+                // 右耳（長圓）
                 RoundedRectangle(cornerRadius: S * 0.20, style: .continuous)
                     .fill(bodyFill)
                     .frame(width: W * 0.18, height: H * 0.46)
@@ -223,7 +217,7 @@ struct BunnyLineArt: View {
                 }
                 .stroke(detail, style: stroke)
 
-                // 腳（小圓） fill + outline
+                // 腳（小圓）
                 Circle()
                     .fill(bodyFill)
                     .frame(width: W * 0.22, height: W * 0.22)
@@ -245,7 +239,7 @@ struct BunnyLineArt: View {
                             .position(x: W * 0.60, y: H * 0.88)
                     )
 
-                // 肚皮（橢圓） fill + soft ring
+                // 肚皮（橢圓）
                 Circle()
                     .fill(bellyFill)
                     .scaleEffect(x: 0.75, y: 1.05, anchor: .center)
@@ -259,7 +253,7 @@ struct BunnyLineArt: View {
                             .position(x: W * 0.50, y: H * 0.66)
                     )
 
-                // 胡蘿蔔（長方形） fill + outline
+                // 胡蘿蔔（長方形）
                 RoundedRectangle(cornerRadius: line)
                     .fill(carrotFill)
                     .frame(width: W * 0.10, height: H * 0.24)
@@ -273,7 +267,7 @@ struct BunnyLineArt: View {
                             .position(x: W * 0.24, y: H * 0.70)
                     )
 
-                // 胡蘿蔔葉（用三角形表示） fill + outline
+                // 胡蘿蔔葉（用三角形表示）
                 Triangle()
                     .fill(leafFill)
                     .frame(width: W * 0.14, height: H * 0.12)
